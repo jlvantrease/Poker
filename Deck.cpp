@@ -12,15 +12,13 @@ Deck::Deck()
  create_deck();
 }
 
-void Deck::draw()
+Card Deck::draw()
 {
-//  if(deck.top() == nullptr)
-//  {
-//      return;
-//  }
- Card c = deck.top();
+ Card test = deck.top();
  deck.pop();
- std::cout << "this works" << std::endl;
+ Enum_Converter converter;
+ //std::cout << "Drew card: " << converter.card_string(test) << std::endl; 
+ return test;
 }
 
 void Deck::create_deck()
@@ -36,8 +34,13 @@ void Deck::create_deck()
     
     shuffle(cards);
     print_deck(cards); //TODO: remove for debug only
+
+    for(Card card : cards)
+    {
+      deck.push(card);
+    }
     
-    std::stack<Card, std::vector<Card>> deck(cards);
+    //std::stack<Card> deck(std::deque<Card>(cards.begin(), cards.end()));
     
     std::cout << "________________________Created and Shuffled Deck__________________________" << std::endl;
 }

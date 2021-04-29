@@ -11,7 +11,7 @@ class Deck
     std::stack<Card> deck;
     public:
         Deck();
-        void draw();
+        Card draw();
         
         
     
