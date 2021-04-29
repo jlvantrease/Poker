@@ -12,4 +12,4 @@ int main()
     //deck.print_deck();
     std::cout << "Drew card: " << converter.card_string(card) << std::endl; 
     return 0;
-}g
+}
